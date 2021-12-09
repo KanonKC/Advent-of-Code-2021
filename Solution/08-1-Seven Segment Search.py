@@ -85,6 +85,14 @@ seven = [
 def intersect(a,b):
     return [i for i in a if i in b]
 
+def isComponent(comp,test):
+    for c in comp:
+        if c not in test:
+            return False
+    return True
+
+digit1478 = 0
+
 while True:
     x = input().split('|')
     if x == ['']:
@@ -92,9 +100,29 @@ while True:
     clue = [i.strip() for i in x[0].split()]
     code = [i.strip() for i in x[1].split()]
 
-    trace = [[],[],[],[],[],[],[],[],[],[]]
-    for i in clue:
-        if len(i) == 2:
-            trace[2].append(i)
+    digit1478 += len([i for i in code if len(i) in [2,3,4,7]])
+print(digit1478)
+#     trace = [[],[],[],[],[],[],[],[],[],[]]
+#     for i in clue:
+#         if len(i) == 2:
+#             trace[1].append(i)
+#         elif len(i) == 3:
+#             trace[7].append(i)
+#         elif len(i) == 4:
+#             trace[4].append(i)
+#         elif len(i) == 5:
+#             trace[2].append(i)
+#             trace[3].append(i)
+#             trace[5].append(i)
+#         elif len(i) == 6:
+#             trace[0].append(i)
+#             trace[6].append(i)
+#             trace[9].append(i)
+#         else:
+#             trace[8].append(i)
+
+#     trace[0] = [i for i in trace[0] if isComponent(trace[7],i)]
+# print(trace)
+        
 
 
