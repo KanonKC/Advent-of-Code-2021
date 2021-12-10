@@ -101,28 +101,8 @@ while True:
     code = [i.strip() for i in x[1].split()]
 
     digit1478 += len([i for i in code if len(i) in [2,3,4,7]])
-print(digit1478)
-#     trace = [[],[],[],[],[],[],[],[],[],[]]
-#     for i in clue:
-#         if len(i) == 2:
-#             trace[1].append(i)
-#         elif len(i) == 3:
-#             trace[7].append(i)
-#         elif len(i) == 4:
-#             trace[4].append(i)
-#         elif len(i) == 5:
-#             trace[2].append(i)
-#             trace[3].append(i)
-#             trace[5].append(i)
-#         elif len(i) == 6:
-#             trace[0].append(i)
-#             trace[6].append(i)
-#             trace[9].append(i)
-#         else:
-#             trace[8].append(i)
 
-#     trace[0] = [i for i in trace[0] if isComponent(trace[7],i)]
-# print(trace)
+print(digit1478)
         
 
 
