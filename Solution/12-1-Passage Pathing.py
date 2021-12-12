@@ -92,6 +92,8 @@
 # start-RW
 # How many paths through this cave system are there that visit small caves at most once?
 
+Counter = 0
+
 def initTraversal(cave):
     traversal(cave,'start',[])
 
@@ -100,10 +102,12 @@ def traversal(cave,point,journey):
         if (i in journey and i.upper() != i) or i == 'start':
             continue
         if i == 'end':
-            print(journey)
-            return
+            global Counter
+            Counter += 1
+            continue
         journey.append(i)
         traversal(cave,i,journey)
+        journey.pop(len(journey)-1)
 
 cave_map = {}
 
@@ -120,5 +124,5 @@ while True:
     else:
         cave_map[x[1]] = [x[0]]
 
-print(cave_map)
 initTraversal(cave_map)
+print(Counter)
